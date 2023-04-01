@@ -13,7 +13,7 @@
 #include "camera.h"
 #include "application.h"
 
-const ivec2 SCREEN_DIMENSIONS = ivec2(720, 580);
+const ivec2 SCREEN_DIMENSIONS = ivec2(920, 500);
 
 GLfloat frameStartTime = -1.0f;
 GLfloat deltaTime;

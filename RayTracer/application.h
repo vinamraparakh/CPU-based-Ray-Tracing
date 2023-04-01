@@ -18,6 +18,8 @@ public:
         KeyMap[GLFW_KEY_LEFT] = 5;
         KeyMap[GLFW_KEY_DOWN] = 6;
         KeyMap[GLFW_KEY_RIGHT] = 7;
+        KeyMap[GLFW_KEY_J] = 8;
+        KeyMap[GLFW_KEY_L] = 9;
         
         camera = new Camera();
         RayTracer::Init(dimensions);
@@ -80,11 +82,25 @@ public:
                             Keys[KeyMap[key]] = true;
                         }
                         break;
+                    case GLFW_KEY_J:
+                        if(Keys[KeyMap[key]] == false) {
+                            RayTracer::gammaCorrection += 0.05f;
+                            reRender();
+                            Keys[KeyMap[key]] = true;
+                        }
+                        break;
+                    case GLFW_KEY_L:
+                        if(Keys[KeyMap[key]] == false) {
+                            RayTracer::gammaCorrection -= 0.05f;
+                            reRender();
+                            Keys[KeyMap[key]] = true;
+                        }
+                        break;
                 }
             }
         }
         else if(action == GLFW_RELEASE) {
-            if((key >= GLFW_KEY_RIGHT && key <= GLFW_KEY_UP) || key == GLFW_KEY_A || key == GLFW_KEY_D || key == GLFW_KEY_S || key == GLFW_KEY_W) {
+            if((key >= GLFW_KEY_RIGHT && key <= GLFW_KEY_UP) || key == GLFW_KEY_A || key == GLFW_KEY_D || key == GLFW_KEY_S || key == GLFW_KEY_W || key == GLFW_KEY_J || key == GLFW_KEY_L) {
                 Keys[KeyMap[key]] = false;
             }
         }
