@@ -21,7 +21,7 @@ Sequential mode            |  Multi-threaded mode
 
 ## Tech Stack
 
-- [OpenGl](https://www.opengl.org/) – framework
+- [OpenGL](https://www.opengl.org/) – framework
 - [C++](https://en.cppreference.com/w/) – language
 
 
